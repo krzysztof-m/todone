@@ -1,0 +1,43 @@
+.brand {
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    padding: .625rem 0;
+    @include atSmall {
+        text-align: left;
+        display: inline-block;
+    }
+
+    &__headline {
+        font-weight: 900;
+        font-size: 2rem;
+        line-height: 2rem;
+        margin: 0;
+
+        &--large {
+            @include atSmall {
+                font-size: 4rem;
+                line-height: 4rem;
+            }
+            
+        }
+    }
+
+    &__to {
+        color: $color-secondary;
+    }
+
+    &__do {
+        color: $color-primary;
+    }
+
+    &__icon {
+        position: relative;
+        transform: rotate(-10deg);
+    }
+
+    &__ne {
+        color: $light-grey;
+    }
+
+}

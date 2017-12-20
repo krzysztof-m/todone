@@ -1,0 +1,60 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+.home {
+    padding: 1.25rem;
+    margin: .625rem 1.25rem;
+    background-color: #fff;
+    text-align: center;
+    border-radius: $border-radius;
+    @include atSmall {
+        /*margin: 0;
+        padding: 3.125rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);*/
+        margin: 2.5rem auto;
+    }
+
+    &__lead {
+        font-size: 1rem;
+        margin: 1.25rem auto;
+        @include atSmall {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.features {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px $light-grey solid;
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px $color-primary solid;
+        color: $color-primary;
+        border-radius: 50%;
+    }
+
+    &__headline {
+        margin: .75rem 0 .25rem;
+        color: $dark-grey;
+        
+        &--main {
+            color: $color-primary;
+            margin: 1.25rem 0 2rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__box {
+        padding: 0 1.875rem;
+        margin-bottom: 1.25rem;
+    }
+}

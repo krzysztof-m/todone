@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row row--margin-t">
+    <div class="row__col1">
+      <ul class="menu menu--vertical">
+        <li><a routerLink="all" routerLinkActive="active"><span class="fa fa-folder menu__icon"></span> All <span class="menu__count">({{ count.all }})</span></a></li>
+        <li><a routerLink="todo" routerLinkActive="active"><span class="fa fa-edit menu__icon"></span> To Do <span class="menu__count">({{ count.todo }})</span></a></li>
+        <li><a routerLink="done" routerLinkActive="active"><span class="fa fa-check menu__icon"></span> Done <span class="menu__count">({{ count.done }})</span></a></li>
+      </ul>
+    </div>
+    <div class="row__col2 row--bg">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+@import '../../../../../scss/variables';
+
+.todo-list {
+    &__wrapper {
+        padding: .625rem;
+        border-radius: $border-radius;
+    }
+
+    &__item {
+        display: flex;
+        & + & {
+            border-top: 1px solid #e7e7e7;
+        }
+        .edit & {
+            margin-bottom: .625rem;
+        }
+    }
+
+    &__input {
+        visibility: hidden;
+        position: absolute;
+        left: -999px;
+    }
+
+    &__label {
+        line-height: $checkbox-size;
+        vertical-align: middle;
+        &::before {
+            content: "\f00c";
+            font-family: "FontAwesome";
+            display: inline-block;
+            width: $checkbox-size;
+            height: $checkbox-size;
+            line-height: $checkbox-size;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px #999999 solid;
+            border-radius: $border-radius;
+            color: #ffffff;
+            transition: color .2s ease-out;
+            cursor: pointer;
+            margin-right: 20px;
+            font-size: 20px;
+            transition: all .3s ease-out;
+            .edit & {
+                color: $lighter-grey;
+            }
+        }
+        &:hover::before {
+            border-color: #333;
+        }
+    }
+
+    &__input:checked + &__label {
+        color: #999999;
+        text-decoration: line-through;
+        &::before {
+            border-color: $color-primary;
+            color: $color-primary;
+        }
+    }
+
+    &__edit-icons {
+        margin-left: auto;
+    }
+}
+
+.edit-icons {
+  list-style: none;
+  &__item {
+    display: inline-block;
+    margin: 0 3px;
+  }
+}
+
+.edit {
+    background-color: $lighter-grey;
+}

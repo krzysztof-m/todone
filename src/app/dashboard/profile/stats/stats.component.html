@@ -1,0 +1,7 @@
+<h2 class="headline headline--underline">Stats</h2>
+<h3>Experience:</h3>
+<p>{{ userService.user.experience }}</p>
+<h3>Level:</h3>
+<p>{{ userService.user.level }}</p>
+<h3>Achievements:</h3>
+<div class="achievement" *ngFor="let achievement of userService.user.achievements"><span class="fa fa-{{ achievement.icon }} achievement__icon"></span><h3 class="achievement__title">{{ achievement.name }}</h3><p class="achievement__desc">{{ achievement.description }}</p></div>

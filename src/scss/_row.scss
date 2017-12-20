@@ -1,0 +1,41 @@
+.row {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &__col1 {
+        @include atSmall {
+            width: 33%;
+            float: left;
+            margin-bottom: 0;
+        }
+        
+    }
+
+    &__col2 {
+        @include atSmall {
+            width: 67%;
+            float: left;
+            margin-bottom: 0;
+        }
+    }
+
+    &--bg {
+        background-color: #ffffff;
+        padding: 1.25rem;
+        
+        box-shadow: 0 3px 5px rgba(0,0,0,.05);
+        @include atSmall {
+            padding: 3.125rem;
+            border-bottom-left-radius: 2 * $border-radius;
+            border-bottom-right-radius: 2 * $border-radius;
+            border-top-right-radius: 2 * $border-radius;
+        }
+    }
+
+    &--margin-t {
+        margin-top: 1.875rem;
+    }
+}

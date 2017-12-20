@@ -1,0 +1,19 @@
+@import '../../../scss/mixins';
+
+.header {
+    background-color: #fff;
+    @include atSmall {
+        padding: 0 1.25rem;
+    }
+    .container {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+    app-item-edit {
+        margin: 0 auto;
+        min-width: 50%;
+    }
+}

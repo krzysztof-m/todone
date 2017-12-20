@@ -1,0 +1,19 @@
+<div class="todo-list__wrapper" [ngClass]="{edit: isEdit}">
+  <li class="todo-list__item">
+    <input type="checkbox" id="task-{{listItem.id}}" class="todo-list__input" [checked]="listItem.done" (change)="onChange()">
+    <label for="task-{{listItem.id}}" class="todo-list__label">{{ listItem.text }}</label>
+    <div class="todo-list__edit-icons">
+      <ul class="edit-icons">
+        <li class="edit-icons__item">
+          <button class="btn btn--edit" (click)="onEditItem()"><span class="fa fa-pencil"></span></button>
+        </li>
+        <li class="edit-icons__item">
+          <button class="btn btn--edit" (click)="onRemoveItem()"><span class="fa fa-close"></span></button>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <div *ngIf="isEdit" class="todo-list__edit">
+    <app-item-edit [isItemEdit]="isEdit" (itemEdited)="onFinishEdit($event)" [itemId]="listItemId"></app-item-edit>
+  </div>
+</div>

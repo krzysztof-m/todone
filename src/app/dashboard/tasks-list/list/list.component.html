@@ -1,0 +1,14 @@
+<div class="section">
+  <div [ngSwitch]="listFilter">
+    <h2 class="headline headline--underline" *ngSwitchCase="'all'">All</h2>
+    <h2 class="headline headline--underline" *ngSwitchCase="'todo'">To Do</h2>
+    <h2 class="headline headline--underline" *ngSwitchCase="'done'">Done</h2>
+    <h2 class="headline headline--underline" *ngSwitchDefault>Section</h2>
+  </div>
+
+  <ul class="todo-list">
+    <button *ngIf="listFilter === 'done'" class="btn btn--primary todo-list__btn-remove-all" type="button" (click)="onRemoveAll()">Remove All</button>
+    <app-list-item *ngFor="let item of tasksList; let i = index" [listItem]="item" [id]="i"></app-list-item>
+  </ul>
+</div>
+
